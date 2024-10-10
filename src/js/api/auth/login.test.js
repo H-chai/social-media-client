@@ -36,8 +36,6 @@ describe("login", () => {
   it("stores a token when provided with valid credentials", async () => {
     await login(email, password);
 
-    console.log("Access Token to save:", accessToken);
-
     expect(save).toHaveBeenCalledWith("token", accessToken);
     expect(save).toHaveBeenCalledWith("profile", mockUserProfile);
   });
