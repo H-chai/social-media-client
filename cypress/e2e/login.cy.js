@@ -9,7 +9,7 @@ describe('Login Test', () => {
 
     cy.get('#loginForm').submit();
 
-    cy.get('.profile-name').should('contain', 'example');
+    cy.get('body').should('have.class', 'logged-in');
   });
 
   it('should not allow user to submit the login form with invalid credentials and shows a message', () => {
