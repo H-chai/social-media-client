@@ -11,4 +11,21 @@ describe('Login Test', () => {
 
     cy.get('.profile-name').should('contain', 'example');
   });
+
+  it('should not allow user to submit the login form with invalid credentials and shows a message', () => {
+    cy.visit('http://127.0.0.1:5500/index.html');
+
+    cy.get('button[data-auth="login"]').first().click();
+
+    cy.get('#loginEmail').type('111@stud.noroff.no');
+    cy.get('#loginPassword').type('11111111');
+
+    cy.get('#loginForm').submit();
+
+    cy.wait(2000);
+
+    cy.on('window:alert', (alertText) => {
+      expect(alertText).to.contain('is incorrect');
+    });
+  });
 });
