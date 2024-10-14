@@ -24,8 +24,6 @@ describe('Login Test', () => {
 
     cy.wait(2000);
 
-    cy.on('window:alert', (alertText) => {
-      expect(alertText).to.contain('is incorrect');
-    });
+    cy.get('.error-message').should('contain', 'is incorrect');
   });
 });
