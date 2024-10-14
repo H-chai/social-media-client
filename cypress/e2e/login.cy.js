@@ -1,6 +1,6 @@
 describe('Login Test', () => {
   it('should allow user to log in with the login form with valid credentials', () => {
-    cy.visit('http://127.0.0.1:5500/index.html');
+    cy.visit('https://social-media-client-h.netlify.app/');
 
     cy.get('button[data-auth="login"]').first().click();
 
@@ -13,7 +13,7 @@ describe('Login Test', () => {
   });
 
   it('should not allow user to submit the login form with invalid credentials and shows a message', () => {
-    cy.visit('http://127.0.0.1:5500/index.html');
+    cy.visit('https://social-media-client-h.netlify.app/');
 
     cy.get('button[data-auth="login"]').first().click();
 
