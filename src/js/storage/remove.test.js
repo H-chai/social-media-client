@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { remove } from "./remove";
+import { remove } from './remove';
 
 const mockLocalStorage = {
   store: {},
@@ -12,18 +12,14 @@ const mockLocalStorage = {
   getItem: jest.fn((key) => {
     return mockLocalStorage.store[key] || null;
   }),
-
-  removeItem: jest.fn(() => {
-    mockLocalStorage.store = {};
-  }),
 };
 
 global.localStorage = mockLocalStorage;
 
-describe("remove function", () => {
-  it("should remove a key from localStorage", () => {
-    const key = "testKey";
-    const value = "testValue";
+describe('remove function', () => {
+  it('should remove a key from localStorage', () => {
+    const key = 'testKey';
+    const value = 'testValue';
 
     localStorage.setItem(key, JSON.stringify(value));
 
