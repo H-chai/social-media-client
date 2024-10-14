@@ -12,6 +12,10 @@ const mockLocalStorage = {
   getItem: jest.fn((key) => {
     return mockLocalStorage.store[key] || null;
   }),
+
+  removeItem: jest.fn(() => {
+    mockLocalStorage.store = {};
+  }),
 };
 
 global.localStorage = mockLocalStorage;
