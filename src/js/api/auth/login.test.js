@@ -1,19 +1,19 @@
 /* eslint-env jest */
 
-import { save } from "../../storage";
-import { login } from "./login";
+import { save } from '../../storage';
+import { login } from './login';
 
-jest.mock("../../storage", () => ({
+jest.mock('../../storage', () => ({
   save: jest.fn(),
 }));
 
-jest.mock("../headers.js", () => ({
+jest.mock('../headers.js', () => ({
   headers: jest.fn(),
 }));
 
-const email = "test@stud.noroff.no";
-const password = "testPasswordForJest";
-const accessToken = "mockAccessTokenForTesting";
+const email = 'test@stud.noroff.no';
+const password = 'testPasswordForJest';
+const accessToken = 'mockAccessTokenForTesting';
 
 const mockUserProfile = {
   email: email,
@@ -28,15 +28,17 @@ const mockLoginFetchSuccess = jest.fn().mockResolvedValue({
 
 global.fetch = mockLoginFetchSuccess;
 
-describe("login", () => {
+describe('login', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it("stores a token when provided with valid credentials", async () => {
+  it('stores a token when provided with valid credentials', async () => {
     await login(email, password);
 
-    expect(save).toHaveBeenCalledWith("token", accessToken);
-    expect(save).toHaveBeenCalledWith("profile", mockUserProfile);
+    expect(save).toHaveBeenCalledWith('token', accessToken);
+    expect(save).toHaveBeenCalledWith('profile', mockUserProfile);
+
+    console.log('hello');
   });
 });
