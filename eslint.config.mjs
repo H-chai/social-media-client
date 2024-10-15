@@ -18,7 +18,7 @@ export default [
   {
     files: ['**/*.test.js'],
     languageOptions: {
-      env: {
+      globals: {
         jest: true,
         node: true,
       },
@@ -33,7 +33,7 @@ export default [
   {
     files: ['**/*.cy.js'],
     languageOptions: {
-      env: {
+      globals: {
         'cypress/globals': true,
       },
     },
