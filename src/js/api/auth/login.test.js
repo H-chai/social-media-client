@@ -38,7 +38,9 @@ describe('login', () => {
 
     expect(save).toHaveBeenCalledWith('token', accessToken);
     expect(save).toHaveBeenCalledWith('profile', mockUserProfile);
+  });
 
-    console.log('hei!');
+  it('should throw an error when called without credentials', async () => {
+    await expect(login()).rejects.toThrow();
   });
 });
