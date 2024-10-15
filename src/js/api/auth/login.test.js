@@ -39,6 +39,6 @@ describe('login', () => {
     expect(save).toHaveBeenCalledWith('token', accessToken);
     expect(save).toHaveBeenCalledWith('profile', mockUserProfile);
 
-    console.log('hello');
+    console.log('hei!');
   });
 });
