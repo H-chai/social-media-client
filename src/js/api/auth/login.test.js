@@ -39,8 +39,4 @@ describe('login', () => {
     expect(save).toHaveBeenCalledWith('token', accessToken);
     expect(save).toHaveBeenCalledWith('profile', mockUserProfile);
   });
-
-  it('should fail this test intentionally', () => {
-    expect(true).toBe(false);
-  });
 });
