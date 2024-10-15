@@ -44,6 +44,9 @@
     ],
     "*.scss": [
       "prettier --write"
+    ],
+    "*.test.js": [
+      "npm run test-unit"
     ]
   }
 }
