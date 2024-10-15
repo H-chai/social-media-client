@@ -17,7 +17,7 @@ describe('Login Test', () => {
     cy.get('body').should('have.class', 'logged-in');
   });
 
-  it('should not allow user to submit the login form with invalid credentials and shows a message', () => {
+  it('should not allow user to submit the login form with invalid credentials and shows a message (the test will fail because there is no .error-message element in DOM)', () => {
     cy.visit('https://social-media-client-h.netlify.app/');
 
     cy.wait(1000);
