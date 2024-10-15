@@ -40,7 +40,7 @@ describe('login', () => {
     expect(save).toHaveBeenCalledWith('profile', mockUserProfile);
   });
 
-  it('should throw an error when called without credentials', async () => {
-    await expect(login()).rejects.toThrow();
+  it('should fail this test intentionally', () => {
+    expect(true).toBe(false);
   });
 });
